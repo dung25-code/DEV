@@ -1,0 +1,30 @@
+name: My First GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Hello
+        run: echo "Hello GitHub Actions!"
+
+      - name: Check project
+        run: |
+          echo "Project: DEV"
+          echo "GitHub Actions is running!"
+          echo "Build completed successfully!"
+
+
+          
