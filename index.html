@@ -1,46 +1,296 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Giới thiệu bản thân</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân - Hoàng Anh Dũng</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Phần đầu */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            margin: auto;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            font-weight: bold;
+            color: #4facfe;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            margin-top: 20px;
+            font-size: 34px;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* Nội dung */
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #4facfe;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-left: 5px solid #4facfe;
+            padding-left: 12px;
+        }
+
+        .section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        /* Danh sách thông tin */
+        .info-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-list li {
+            background: #f5f8ff;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #e5e9f5;
+            transition: 0.3s;
+        }
+
+        .info-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.2);
+            background: white;
+        }
+
+        /* Liên hệ */
+        .contact {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact a {
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #4facfe, #00c6ff);
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 198, 255, 0.35);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f5f7fb;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 27px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .info-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                flex-direction: column;
+            }
+
+            .contact a {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>GIỚI THIỆU BẢN THÂN</h1>
+    <div class="container">
 
-    <h2>Xin chào!</h2>
+        <!-- HEADER -->
+        <div class="header">
 
-    <p>
-        Mình tên là <strong>Hoàng Anh Dũng</strong>.
-    </p>
+            <div class="avatar">
+                HAD
+            </div>
 
-    <p>
-        Mình là sinh viên ngành <strong>Kỹ thuật Máy tính</strong>
-        tại <strong>Đại học Đông Á</strong>.
-    </p>
+            <h1>HOÀNG ANH DŨNG</h1>
 
-    <h2>Thông tin cá nhân</h2>
+            <p>Sinh viên Kỹ thuật Máy tính</p>
 
-    <ul>
-        <li>Họ và tên: Hoàng Anh Dũng</li>
-        <li>Ngành học: Kỹ thuật Máy tính</li>
-        <li>Trường: Đại học Đông Á</li>
-        <li>Sở thích: Bóng đá, cầu lông, du lịch và nghe nhạc</li>
-    </ul>
+        </div>
 
-    <h2>Mục tiêu</h2>
 
-    <p>
-        Mục tiêu của mình là nâng cao kiến thức về lập trình,
-        hệ thống nhúng và IoT, đồng thời trở thành một kỹ sư
-        Kỹ thuật Máy tính chuyên nghiệp trong tương lai.
-    </p>
+        <!-- CONTENT -->
+        <div class="content">
 
-    <h2>Liên hệ</h2>
+            <!-- Giới thiệu -->
+            <div class="section">
 
-    <p>Email: example@gmail.com</p>
-    <p>Facebook: Hoàng Anh Dũng</p>
+                <h2>👋 Xin chào!</h2>
+
+                <p>
+                    Mình tên là <strong>Hoàng Anh Dũng</strong>.
+                </p>
+
+                <p>
+                    Mình là sinh viên ngành
+                    <strong>Kỹ thuật Máy tính</strong>
+                    tại <strong>Đại học Đông Á</strong>.
+                </p>
+
+            </div>
+
+
+            <!-- Thông tin cá nhân -->
+            <div class="section">
+
+                <h2>👤 Thông tin cá nhân</h2>
+
+                <ul class="info-list">
+
+                    <li>
+                        <strong>👨‍💻 Họ và tên</strong><br>
+                        Hoàng Anh Dũng
+                    </li>
+
+                    <li>
+                        <strong>🎓 Ngành học</strong><br>
+                        Kỹ thuật Máy tính
+                    </li>
+
+                    <li>
+                        <strong>🏫 Trường</strong><br>
+                        Đại học Đông Á
+                    </li>
+
+                    <li>
+                        <strong>⚽ Sở thích</strong><br>
+                        Bóng đá, cầu lông, du lịch và nghe nhạc
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Mục tiêu -->
+            <div class="section">
+
+                <h2>🎯 Mục tiêu</h2>
+
+                <p>
+                    Mục tiêu của mình là nâng cao kiến thức về
+                    <strong>lập trình, hệ thống nhúng và IoT</strong>,
+                    đồng thời trở thành một
+                    <strong>kỹ sư Kỹ thuật Máy tính chuyên nghiệp</strong>
+                    trong tương lai.
+                </p>
+
+            </div>
+
+
+            <!-- Liên hệ -->
+            <div class="section">
+
+                <h2>📞 Liên hệ</h2>
+
+                <div class="contact">
+
+                    <a href="mailto:example@gmail.com">
+                        📧 Email
+                    </a>
+
+                    <a href="#">
+                        📘 Facebook
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <div class="footer">
+            © 2026 Hoàng Anh Dũng | Personal Website
+        </div>
+
+    </div>
 
 </body>
 </html>
+```
