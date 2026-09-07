@@ -3,110 +3,770 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoàng Anh Dũng | Portfolio</title>
-  <meta name="description" content="Portfolio cá nhân của Hoàng Anh Dũng - Kỹ thuật Máy tính">
+
+  <title>Hoàng Anh Dũng | Computer Engineering Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio cá nhân của Hoàng Anh Dũng - Sinh viên Kỹ thuật Máy tính, Embedded, IoT và DevOps."
+  >
+
+  <meta name="theme-color" content="#050816">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/src/style.css">
 </head>
+
 <body>
+
+  <!-- LOADING -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">HAD<span>.</span></div>
+      <div class="loader-bar">
+        <span></span>
+      </div>
+      <p>Loading portfolio...</p>
+    </div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow"></div>
+
+  <!-- BACKGROUND -->
+  <div class="background">
+    <div class="grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
-      <a class="logo" href="#home">HAD<span>.</span></a>
+
+      <a href="#home" class="logo">
+        HAD<span>.</span>
+      </a>
+
       <div class="nav-links">
-        <a href="#home">Trang chủ</a>
+        <a href="#home" class="active">Trang chủ</a>
         <a href="#about">Giới thiệu</a>
         <a href="#skills">Kỹ năng</a>
         <a href="#projects">Dự án</a>
         <a href="#contact">Liên hệ</a>
       </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
     </nav>
   </header>
 
+
   <main>
+
+    <!-- ================= HERO ================= -->
+
     <section id="home" class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">XIN CHÀO 👋</p>
-        <h1>Mình là <span>Hoàng Anh Dũng</span></h1>
-        <h2>Sinh viên Kỹ thuật Máy tính</h2>
-        <p class="lead">
-          Mình quan tâm đến lập trình, hệ thống nhúng, IoT và DevOps.
-          Mục tiêu là xây dựng những sản phẩm công nghệ thực tế và hiệu quả.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">Xem dự án</a>
-          <a class="btn secondary" href="#contact">Liên hệ</a>
+
+      <div class="hero-content reveal">
+
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          AVAILABLE TO LEARN & BUILD
         </div>
+
+        <p class="eyebrow">
+          XIN CHÀO, MÌNH LÀ
+        </p>
+
+        <h1>
+          Hoàng Anh
+          <span>Dũng.</span>
+        </h1>
+
+        <h2>
+          Computer Engineering
+          <span class="typing"></span>
+        </h2>
+
+        <p class="hero-description">
+          Mình là sinh viên Kỹ thuật Máy tính, yêu thích công nghệ,
+          hệ thống nhúng, IoT và DevOps. Mình luôn hướng đến việc
+          biến những ý tưởng thành các sản phẩm công nghệ thực tế.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn primary">
+            Xem dự án
+            <span>↗</span>
+          </a>
+
+          <a href="#contact" class="btn secondary">
+            Liên hệ với mình
+          </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div>
+            <strong>03+</strong>
+            <span>Dự án</span>
+          </div>
+
+          <div>
+            <strong>04+</strong>
+            <span>Công nghệ</span>
+          </div>
+
+          <div>
+            <strong>∞</strong>
+            <span>Đam mê</span>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="avatar-wrap">
-        <div class="avatar">HAD</div>
-        <div class="status">● Available to learn & build</div>
+
+      <!-- HERO VISUAL -->
+
+      <div class="hero-visual reveal">
+
+        <div class="tech-ring ring-1"></div>
+        <div class="tech-ring ring-2"></div>
+        <div class="tech-ring ring-3"></div>
+
+        <div class="avatar-card">
+
+          <div class="avatar-top">
+            <span>PORTFOLIO</span>
+            <span>2026</span>
+          </div>
+
+          <div class="avatar">
+            HAD
+          </div>
+
+          <div class="avatar-name">
+            <strong>Hoàng Anh Dũng</strong>
+            <span>Computer Engineering Student</span>
+          </div>
+
+          <div class="code-line">
+            <span>&lt;</span>
+            BUILD
+            <span>/&gt;</span>
+          </div>
+
+        </div>
+
+        <div class="floating-card card-code">
+          <span>{ }</span>
+          <div>
+            <strong>CODE</strong>
+            <small>C / C++ / Python</small>
+          </div>
+        </div>
+
+        <div class="floating-card card-iot">
+          <span>◉</span>
+          <div>
+            <strong>IoT</strong>
+            <small>Embedded Systems</small>
+          </div>
+        </div>
+
+        <div class="floating-card card-devops">
+          <span>⚡</span>
+          <div>
+            <strong>DEVOPS</strong>
+            <small>Git · CI/CD</small>
+          </div>
+        </div>
+
       </div>
+
     </section>
 
+
+    <!-- ================= ABOUT ================= -->
+
     <section id="about" class="section">
-      <p class="eyebrow">ABOUT ME</p>
-      <h2>Giới thiệu bản thân</h2>
-      <div class="about-grid">
+
+      <div class="section-heading reveal">
+
         <div>
-          <p>
-            Mình là <strong>Hoàng Anh Dũng</strong>, sinh viên ngành
-            <strong>Kỹ thuật Máy tính</strong> tại <strong>Đại học Đông Á</strong>.
+          <p class="eyebrow">01 — ABOUT ME</p>
+
+          <h2>
+            Một chút về
+            <span>mình.</span>
+          </h2>
+        </div>
+
+        <p class="section-intro">
+          Không chỉ học công nghệ, mình muốn hiểu cách công nghệ
+          có thể giải quyết những vấn đề thực tế.
+        </p>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+
+          <p class="big-text">
+            Mình là <strong>Hoàng Anh Dũng</strong>,
+            sinh viên ngành <strong>Kỹ thuật Máy tính</strong>
+            tại <strong>Đại học Đông Á</strong>.
           </p>
+
           <p>
             Mình đang tập trung phát triển kiến thức về lập trình,
             hệ thống nhúng, IoT, cơ sở dữ liệu và quy trình CI/CD.
           </p>
+
+          <p>
+            Mục tiêu của mình là trở thành một kỹ sư máy tính có khả năng
+            kết hợp phần cứng, phần mềm và các giải pháp IoT để tạo ra
+            những sản phẩm hữu ích trong thực tế.
+          </p>
+
+          <div class="about-tags">
+            <span>Embedded</span>
+            <span>IoT</span>
+            <span>DevOps</span>
+            <span>Problem Solving</span>
+          </div>
+
         </div>
-        <div class="info-card">
-          <div><b>🎓 Trường</b><span>Đại học Đông Á</span></div>
-          <div><b>💻 Chuyên ngành</b><span>Kỹ thuật Máy tính</span></div>
-          <div><b>🎯 Định hướng</b><span>Embedded / IoT / DevOps</span></div>
-          <div><b>⚽ Sở thích</b><span>Bóng đá, cầu lông, du lịch, âm nhạc</span></div>
+
+
+        <div class="info-card reveal">
+
+          <div class="info-header">
+            <span>PERSONAL INFO</span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="info-item">
+            <span>🎓 Trường</span>
+            <strong>Đại học Đông Á</strong>
+          </div>
+
+          <div class="info-item">
+            <span>💻 Chuyên ngành</span>
+            <strong>Kỹ thuật Máy tính</strong>
+          </div>
+
+          <div class="info-item">
+            <span>🎯 Định hướng</span>
+            <strong>Embedded / IoT / DevOps</strong>
+          </div>
+
+          <div class="info-item">
+            <span>⚽ Sở thích</span>
+            <strong>Bóng đá, cầu lông</strong>
+          </div>
+
+          <div class="info-item">
+            <span>🌎 Hobbies</span>
+            <strong>Du lịch · Âm nhạc</strong>
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ================= SKILLS ================= -->
 
     <section id="skills" class="section">
-      <p class="eyebrow">MY SKILLS</p>
-      <h2>Kỹ năng</h2>
-      <div class="cards">
-        <article class="card"><div class="icon">C</div><h3>C / C++</h3><p>Lập trình cơ bản và lập trình cho hệ thống nhúng.</p></article>
-        <article class="card"><div class="icon">🐍</div><h3>Python</h3><p>Xử lý dữ liệu, thuật toán và xây dựng ứng dụng cơ bản.</p></article>
-        <article class="card"><div class="icon">🔌</div><h3>Embedded & IoT</h3><p>Arduino, ESP, cảm biến, MQTT và mô hình IoT.</p></article>
-        <article class="card"><div class="icon">⚙️</div><h3>DevOps</h3><p>Git, GitHub, GitHub Actions, Vercel và CI/CD.</p></article>
+
+      <div class="section-heading reveal">
+
+        <div>
+
+          <p class="eyebrow">02 — MY SKILLS</p>
+
+          <h2>
+            Công nghệ mình
+            <span>sử dụng.</span>
+          </h2>
+
+        </div>
+
       </div>
+
+
+      <div class="skills-grid">
+
+        <article class="skill-card reveal">
+
+          <div class="skill-number">01</div>
+
+          <div class="skill-icon">
+            C
+          </div>
+
+          <h3>C / C++</h3>
+
+          <p>
+            Lập trình cơ bản và phát triển chương trình
+            cho các hệ thống nhúng.
+          </p>
+
+          <div class="skill-progress">
+            <div class="progress-info">
+              <span>Knowledge</span>
+              <span>75%</span>
+            </div>
+
+            <div class="progress">
+              <span style="width:75%"></span>
+            </div>
+          </div>
+
+        </article>
+
+
+        <article class="skill-card reveal">
+
+          <div class="skill-number">02</div>
+
+          <div class="skill-icon">
+            🐍
+          </div>
+
+          <h3>Python</h3>
+
+          <p>
+            Xử lý dữ liệu, thuật toán và xây dựng
+            các ứng dụng cơ bản.
+          </p>
+
+          <div class="skill-progress">
+
+            <div class="progress-info">
+              <span>Knowledge</span>
+              <span>70%</span>
+            </div>
+
+            <div class="progress">
+              <span style="width:70%"></span>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="skill-card reveal">
+
+          <div class="skill-number">03</div>
+
+          <div class="skill-icon">
+            ⚡
+          </div>
+
+          <h3>Embedded & IoT</h3>
+
+          <p>
+            Arduino, ESP, cảm biến, MQTT và xây dựng
+            mô hình IoT.
+          </p>
+
+          <div class="skill-progress">
+
+            <div class="progress-info">
+              <span>Knowledge</span>
+              <span>80%</span>
+            </div>
+
+            <div class="progress">
+              <span style="width:80%"></span>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="skill-card reveal">
+
+          <div class="skill-number">04</div>
+
+          <div class="skill-icon">
+            ⚙
+          </div>
+
+          <h3>DevOps</h3>
+
+          <p>
+            Git, GitHub, GitHub Actions, Vercel
+            và quy trình CI/CD.
+          </p>
+
+          <div class="skill-progress">
+
+            <div class="progress-info">
+              <span>Knowledge</span>
+              <span>65%</span>
+            </div>
+
+            <div class="progress">
+              <span style="width:65%"></span>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <div class="tech-stack reveal">
+
+        <span>TECH STACK</span>
+
+        <div>
+          <b>C</b>
+          <b>C++</b>
+          <b>Python</b>
+          <b>Arduino</b>
+          <b>ESP</b>
+          <b>MQTT</b>
+          <b>Git</b>
+          <b>GitHub</b>
+          <b>Vercel</b>
+          <b>Supabase</b>
+        </div>
+
+      </div>
+
     </section>
+
+
+    <!-- ================= PROJECTS ================= -->
 
     <section id="projects" class="section">
-      <p class="eyebrow">PROJECTS</p>
-      <h2>Dự án tiêu biểu</h2>
-      <div class="cards">
-        <article class="card project"><span>01</span><h3>Smart Home</h3><p>Hệ thống nhà thông minh ứng dụng IoT và vi điều khiển.</p></article>
-        <article class="card project"><span>02</span><h3>Smart Traffic</h3><p>Mô hình hệ thống giao thông thông minh.</p></article>
-        <article class="card project"><span>03</span><h3>Line Following Robot</h3><p>Robot dò line sử dụng Arduino và cảm biến.</p></article>
+
+      <div class="section-heading reveal">
+
+        <div>
+
+          <p class="eyebrow">03 — PROJECTS</p>
+
+          <h2>
+            Những thứ mình đã
+            <span>build.</span>
+          </h2>
+
+        </div>
+
+        <p class="section-intro">
+          Một số dự án học tập và cá nhân giúp mình
+          áp dụng kiến thức vào thực tế.
+        </p>
+
       </div>
+
+
+      <div class="projects-grid">
+
+
+        <article class="project-card project-large reveal">
+
+          <div class="project-image smart-home">
+
+            <div class="project-glow"></div>
+
+            <div class="project-interface">
+
+              <div class="interface-top">
+                <span>SMART HOME</span>
+                <span>● ONLINE</span>
+              </div>
+
+              <div class="interface-center">
+                <span>🏠</span>
+                <strong>SMART</strong>
+                <small>HOME SYSTEM</small>
+              </div>
+
+              <div class="interface-data">
+                <span>Temperature <b>27°C</b></span>
+                <span>Humidity <b>68%</b></span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-meta">
+              <span>01</span>
+              <span>IoT</span>
+            </div>
+
+            <h3>Smart Home</h3>
+
+            <p>
+              Hệ thống nhà thông minh ứng dụng IoT,
+              vi điều khiển và các cảm biến để giám sát
+              và điều khiển thiết bị.
+            </p>
+
+            <div class="project-tags">
+              <span>Arduino</span>
+              <span>ESP</span>
+              <span>MQTT</span>
+              <span>IoT</span>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="project-card reveal">
+
+          <div class="project-image traffic">
+
+            <div class="traffic-light">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="road">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-meta">
+              <span>02</span>
+              <span>SMART CITY</span>
+            </div>
+
+            <h3>Smart Traffic</h3>
+
+            <p>
+              Mô hình hệ thống giao thông thông minh
+              nhằm tối ưu hóa việc điều khiển giao thông.
+            </p>
+
+            <div class="project-tags">
+              <span>Embedded</span>
+              <span>Sensor</span>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="project-card reveal">
+
+          <div class="project-image robot">
+
+            <div class="robot-body">
+              <div class="robot-eye"></div>
+              <div class="robot-eye"></div>
+            </div>
+
+            <div class="line-path"></div>
+
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-meta">
+              <span>03</span>
+              <span>ROBOTICS</span>
+            </div>
+
+            <h3>Line Following Robot</h3>
+
+            <p>
+              Robot dò line sử dụng Arduino và cảm biến
+              để xác định và bám theo đường đi.
+            </p>
+
+            <div class="project-tags">
+              <span>Arduino</span>
+              <span>Sensor</span>
+              <span>C/C++</span>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
     </section>
+
+
+    <!-- ================= CONTACT ================= -->
 
     <section id="contact" class="section contact-section">
-      <p class="eyebrow">CONTACT</p>
-      <h2>Gửi tin nhắn cho mình</h2>
-      <p class="muted">Tin nhắn sẽ được lưu trực tiếp vào Supabase Database.</p>
 
-      <form id="contactForm">
-        <div class="form-row">
-          <input id="name" type="text" placeholder="Họ và tên" required>
-          <input id="email" type="email" placeholder="Email" required>
+      <div class="contact-container">
+
+        <div class="contact-heading reveal">
+
+          <p class="eyebrow">04 — CONTACT</p>
+
+          <h2>
+            Hãy cùng tạo ra
+            <span>điều gì đó.</span>
+          </h2>
+
+          <p>
+            Nếu bạn muốn trao đổi về một dự án, cơ hội thực tập
+            hoặc đơn giản là muốn kết nối, hãy gửi tin nhắn cho mình.
+          </p>
+
+          <div class="contact-links">
+
+            <a href="#contact">
+              <span>✉</span>
+              <div>
+                <small>Email</small>
+                <strong>Let's connect</strong>
+              </div>
+            </a>
+
+            <a href="#projects">
+              <span>⌘</span>
+              <div>
+                <small>Portfolio</small>
+                <strong>View my projects</strong>
+              </div>
+            </a>
+
+          </div>
+
         </div>
-        <textarea id="message" rows="6" placeholder="Nội dung tin nhắn..." required></textarea>
-        <button class="btn primary" type="submit">Gửi tin nhắn →</button>
-        <p id="formStatus"></p>
-      </form>
+
+
+        <div class="contact-form-wrapper reveal">
+
+          <form id="contactForm">
+
+            <div class="form-row">
+
+              <div class="input-group">
+                <label>HỌ VÀ TÊN</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Nguyễn Văn A"
+                  required
+                >
+              </div>
+
+              <div class="input-group">
+                <label>EMAIL</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="email@example.com"
+                  required
+                >
+              </div>
+
+            </div>
+
+            <div class="input-group">
+
+              <label>NỘI DUNG</label>
+
+              <textarea
+                id="message"
+                rows="6"
+                placeholder="Hãy viết điều bạn muốn trao đổi..."
+                required
+              ></textarea>
+
+            </div>
+
+            <button class="btn primary submit-btn" type="submit">
+
+              <span>Gửi tin nhắn</span>
+
+              <span class="arrow">
+                →
+              </span>
+
+            </button>
+
+            <p id="formStatus"></p>
+
+          </form>
+
+        </div>
+
+      </div>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 Hoàng Anh Dũng · Built with HTML/CSS/JS + Supabase + Vercel</p>
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        HAD<span>.</span>
+      </div>
+
+      <p>
+        Designing ideas. Building technology.
+      </p>
+
+      <span>
+        © 2026 Hoàng Anh Dũng
+      </span>
+
+    </div>
+
   </footer>
 
+
+  <!-- BACK TO TOP -->
+
+  <button id="backTop" class="back-top">
+    ↑
+  </button>
+
+
   <script type="module" src="/src/main.js"></script>
+
 </body>
 </html>
