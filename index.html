@@ -1,772 +1,844 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoàng Anh Dũng | Portfolio</title>
 
-  <title>Hoàng Anh Dũng | Computer Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <meta
-    name="description"
-    content="Portfolio cá nhân của Hoàng Anh Dũng - Sinh viên Kỹ thuật Máy tính, Embedded, IoT và DevOps."
-  >
+<style>
+:root {
+    --bg: #080b18;
+    --card: #11172b;
+    --cyan: #63e6ff;
+    --purple: #a78bfa;
+    --white: #f4f6ff;
+    --muted: #9ba5c2;
+}
 
-  <meta name="theme-color" content="#050816">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  >
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-  <link rel="stylesheet" href="/src/style.css">
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 11, 24, .88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #ffffff12;
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: 1px solid #ffffff25;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 20px;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 70px;
+    background:
+        radial-gradient(circle at 80% 30%, #5145cd30, transparent 35%),
+        radial-gradient(circle at 10% 70%, #00d9ff12, transparent 30%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #63e6ff40;
+    border-radius: 30px;
+    color: var(--cyan);
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1.08;
+    letter-spacing: -4px;
+    margin-bottom: 20px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--muted);
+    max-width: 600px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.btn {
+    padding: 13px 21px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, var(--cyan), var(--purple));
+    color: #080b18;
+}
+
+.btn-outline {
+    border: 1px solid #ffffff30;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.stats strong {
+    font-size: 25px;
+    display: block;
+}
+
+.stats span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.profile {
+    background: linear-gradient(145deg, #18213e, #0c1123);
+    border: 1px solid #63e6ff35;
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 25px 80px #0005;
+    transition: .4s;
+}
+
+.profile:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    margin: 25px auto;
+    border-radius: 35px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #63e6ff30, #a78bfa35);
+    border: 1px solid #63e6ff65;
+    color: var(--cyan);
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.profile p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title small {
+    color: var(--cyan);
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 5vw, 45px);
+    margin-top: 10px;
+}
+
+.section-title p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #ffffff12;
+    border-radius: 20px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: #63e6ff55;
+    transform: translateY(-4px);
+}
+
+.card p {
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.tag {
+    background: #63e6ff12;
+    border: 1px solid #63e6ff25;
+    color: var(--cyan);
+    border-radius: 7px;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ffffff12;
+    font-size: 13px;
+}
+
+.info-row span {
+    color: var(--muted);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: #63e6ff15;
+    color: var(--cyan);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    min-height: 85px;
+}
+
+.bar {
+    height: 5px;
+    background: #ffffff15;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-visual {
+    height: 180px;
+    border-radius: 13px;
+    background: radial-gradient(circle, #5145cd45, #0b1020 70%);
+    display: grid;
+    place-items: center;
+    font-size: 60px;
+    margin-bottom: 22px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 35px;
+}
+
+form {
+    background: var(--card);
+    border: 1px solid #ffffff15;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #cbd5f5;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    background: #080b18;
+    border: 1px solid #ffffff20;
+    border-radius: 9px;
+    color: white;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--cyan);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+footer {
+    border-top: 1px solid #ffffff15;
+    padding: 25px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+#backTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid #63e6ff55;
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--cyan);
+    display: none;
+    cursor: pointer;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .7s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width: 850px) {
+    .hero-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        gap: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile {
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media(max-width: 600px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        width: 90%;
+        padding: 15px;
+        background: #11172b;
+        border: 1px solid #ffffff20;
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .card, form {
+        padding: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- LOADING -->
-  <div id="loader">
-    <div class="loader-content">
-      <div class="loader-logo">HAD<span>.</span></div>
-      <div class="loader-bar">
-        <span></span>
-      </div>
-      <p>Loading portfolio...</p>
-    </div>
-  </div>
+<header>
+    <nav class="container">
+        <a href="#home" class="logo">HAD<span>.</span></a>
 
-  <!-- CURSOR GLOW -->
-  <div class="cursor-glow"></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Trang chủ</a>
+            <a href="#about">Giới thiệu</a>
+            <a href="#skills">Kỹ năng</a>
+            <a href="#projects">Dự án</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
 
-  <!-- BACKGROUND -->
-  <div class="background">
-    <div class="grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
-  <!-- NAVBAR -->
-  <header class="header">
-    <nav class="navbar">
-
-      <a href="#home" class="logo">
-        HAD<span>.</span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#home" class="active">Trang chủ</a>
-        <a href="#about">Giới thiệu</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#projects">Dự án</a>
-        <a href="#contact">Liên hệ</a>
-      </div>
-
-      <button class="menu-btn" id="menuBtn">
-        ☰
-      </button>
-
+        <button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button>
     </nav>
-  </header>
-
-
-  <main>
-
-    <!-- ================= HERO ================= -->
-
-    <section id="home" class="hero">
-
-      <div class="hero-content reveal">
-
-        <div class="hero-badge">
-          <span class="pulse"></span>
-          AVAILABLE TO LEARN & BUILD
-        </div>
-
-        <p class="eyebrow">
-          XIN CHÀO, MÌNH LÀ
-        </p>
-
-        <h1>
-          Hoàng Anh
-          <span>Dũng.</span>
-        </h1>
-
-        <h2>
-          Computer Engineering
-          <span class="typing"></span>
-        </h2>
-
-        <p class="hero-description">
-          Mình là sinh viên Kỹ thuật Máy tính, yêu thích công nghệ,
-          hệ thống nhúng, IoT và DevOps. Mình luôn hướng đến việc
-          biến những ý tưởng thành các sản phẩm công nghệ thực tế.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#projects" class="btn primary">
-            Xem dự án
-            <span>↗</span>
-          </a>
-
-          <a href="#contact" class="btn secondary">
-            Liên hệ với mình
-          </a>
-
-        </div>
-
-        <div class="hero-stats">
-
-          <div>
-            <strong>03+</strong>
-            <span>Dự án</span>
-          </div>
-
-          <div>
-            <strong>04+</strong>
-            <span>Công nghệ</span>
-          </div>
-
-          <div>
-            <strong>∞</strong>
-            <span>Đam mê</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- HERO VISUAL -->
-
-      <div class="hero-visual reveal">
-
-        <div class="tech-ring ring-1"></div>
-        <div class="tech-ring ring-2"></div>
-        <div class="tech-ring ring-3"></div>
-
-        <div class="avatar-card">
-
-          <div class="avatar-top">
-            <span>PORTFOLIO</span>
-            <span>2026</span>
-          </div>
-
-          <div class="avatar">
-            HAD
-          </div>
-
-          <div class="avatar-name">
-            <strong>Hoàng Anh Dũng</strong>
-            <span>Computer Engineering Student</span>
-          </div>
-
-          <div class="code-line">
-            <span>&lt;</span>
-            BUILD
-            <span>/&gt;</span>
-          </div>
-
-        </div>
-
-        <div class="floating-card card-code">
-          <span>{ }</span>
-          <div>
-            <strong>CODE</strong>
-            <small>C / C++ / Python</small>
-          </div>
-        </div>
-
-        <div class="floating-card card-iot">
-          <span>◉</span>
-          <div>
-            <strong>IoT</strong>
-            <small>Embedded Systems</small>
-          </div>
-        </div>
-
-        <div class="floating-card card-devops">
-          <span>⚡</span>
-          <div>
-            <strong>DEVOPS</strong>
-            <small>Git · CI/CD</small>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="section">
-
-      <div class="section-heading reveal">
-
-        <div>
-          <p class="eyebrow">01 — ABOUT ME</p>
-
-          <h2>
-            Một chút về
-            <span>mình.</span>
-          </h2>
-        </div>
-
-        <p class="section-intro">
-          Không chỉ học công nghệ, mình muốn hiểu cách công nghệ
-          có thể giải quyết những vấn đề thực tế.
-        </p>
-
-      </div>
-
-
-      <div class="about-grid">
-
-        <div class="about-text reveal">
-
-          <p class="big-text">
-            Mình là <strong>Hoàng Anh Dũng</strong>,
-            sinh viên ngành <strong>Kỹ thuật Máy tính</strong>
-            tại <strong>Đại học Đông Á</strong>.
-          </p>
-
-          <p>
-            Mình đang tập trung phát triển kiến thức về lập trình,
-            hệ thống nhúng, IoT, cơ sở dữ liệu và quy trình CI/CD.
-          </p>
-
-          <p>
-            Mục tiêu của mình là trở thành một kỹ sư máy tính có khả năng
-            kết hợp phần cứng, phần mềm và các giải pháp IoT để tạo ra
-            những sản phẩm hữu ích trong thực tế.
-          </p>
-
-          <div class="about-tags">
-            <span>Embedded</span>
-            <span>IoT</span>
-            <span>DevOps</span>
-            <span>Problem Solving</span>
-          </div>
-
-        </div>
-
-
-        <div class="info-card reveal">
-
-          <div class="info-header">
-            <span>PERSONAL INFO</span>
-            <span class="dot"></span>
-          </div>
-
-          <div class="info-item">
-            <span>🎓 Trường</span>
-            <strong>Đại học Đông Á</strong>
-          </div>
-
-          <div class="info-item">
-            <span>💻 Chuyên ngành</span>
-            <strong>Kỹ thuật Máy tính</strong>
-          </div>
-
-          <div class="info-item">
-            <span>🎯 Định hướng</span>
-            <strong>Embedded / IoT / DevOps</strong>
-          </div>
-
-          <div class="info-item">
-            <span>⚽ Sở thích</span>
-            <strong>Bóng đá, cầu lông</strong>
-          </div>
-
-          <div class="info-item">
-            <span>🌎 Hobbies</span>
-            <strong>Du lịch · Âm nhạc</strong>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills" class="section">
-
-      <div class="section-heading reveal">
-
-        <div>
-
-          <p class="eyebrow">02 — MY SKILLS</p>
-
-          <h2>
-            Công nghệ mình
-            <span>sử dụng.</span>
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="skills-grid">
-
-        <article class="skill-card reveal">
-
-          <div class="skill-number">01</div>
-
-          <div class="skill-icon">
-            C
-          </div>
-
-          <h3>C / C++</h3>
-
-          <p>
-            Lập trình cơ bản và phát triển chương trình
-            cho các hệ thống nhúng.
-          </p>
-
-          <div class="skill-progress">
-            <div class="progress-info">
-              <span>Knowledge</span>
-              <span>75%</span>
-            </div>
-
-            <div class="progress">
-              <span style="width:75%"></span>
-            </div>
-          </div>
-
-        </article>
-
-
-        <article class="skill-card reveal">
-
-          <div class="skill-number">02</div>
-
-          <div class="skill-icon">
-            🐍
-          </div>
-
-          <h3>Python</h3>
-
-          <p>
-            Xử lý dữ liệu, thuật toán và xây dựng
-            các ứng dụng cơ bản.
-          </p>
-
-          <div class="skill-progress">
-
-            <div class="progress-info">
-              <span>Knowledge</span>
-              <span>70%</span>
-            </div>
-
-            <div class="progress">
-              <span style="width:70%"></span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <article class="skill-card reveal">
-
-          <div class="skill-number">03</div>
-
-          <div class="skill-icon">
-            ⚡
-          </div>
-
-          <h3>Embedded & IoT</h3>
-
-          <p>
-            Arduino, ESP, cảm biến, MQTT và xây dựng
-            mô hình IoT.
-          </p>
-
-          <div class="skill-progress">
-
-            <div class="progress-info">
-              <span>Knowledge</span>
-              <span>80%</span>
-            </div>
-
-            <div class="progress">
-              <span style="width:80%"></span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <article class="skill-card reveal">
-
-          <div class="skill-number">04</div>
-
-          <div class="skill-icon">
-            ⚙
-          </div>
-
-          <h3>DevOps</h3>
-
-          <p>
-            Git, GitHub, GitHub Actions, Vercel
-            và quy trình CI/CD.
-          </p>
-
-          <div class="skill-progress">
-
-            <div class="progress-info">
-              <span>Knowledge</span>
-              <span>65%</span>
-            </div>
-
-            <div class="progress">
-              <span style="width:65%"></span>
-            </div>
-
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <div class="tech-stack reveal">
-
-        <span>TECH STACK</span>
-
-        <div>
-          <b>C</b>
-          <b>C++</b>
-          <b>Python</b>
-          <b>Arduino</b>
-          <b>ESP</b>
-          <b>MQTT</b>
-          <b>Git</b>
-          <b>GitHub</b>
-          <b>Vercel</b>
-          <b>Supabase</b>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects" class="section">
-
-      <div class="section-heading reveal">
-
-        <div>
-
-          <p class="eyebrow">03 — PROJECTS</p>
-
-          <h2>
-            Những thứ mình đã
-            <span>build.</span>
-          </h2>
-
-        </div>
-
-        <p class="section-intro">
-          Một số dự án học tập và cá nhân giúp mình
-          áp dụng kiến thức vào thực tế.
-        </p>
-
-      </div>
-
-
-      <div class="projects-grid">
-
-
-        <article class="project-card project-large reveal">
-
-          <div class="project-image smart-home">
-
-            <div class="project-glow"></div>
-
-            <div class="project-interface">
-
-              <div class="interface-top">
-                <span>SMART HOME</span>
-                <span>● ONLINE</span>
-              </div>
-
-              <div class="interface-center">
-                <span>🏠</span>
-                <strong>SMART</strong>
-                <small>HOME SYSTEM</small>
-              </div>
-
-              <div class="interface-data">
-                <span>Temperature <b>27°C</b></span>
-                <span>Humidity <b>68%</b></span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="project-content">
-
-            <div class="project-meta">
-              <span>01</span>
-              <span>IoT</span>
-            </div>
-
-            <h3>Smart Home</h3>
-
-            <p>
-              Hệ thống nhà thông minh ứng dụng IoT,
-              vi điều khiển và các cảm biến để giám sát
-              và điều khiển thiết bị.
+</header>
+
+<main>
+<section class="hero" id="home">
+    <div class="container hero-grid">
+        <div class="reveal">
+            <div class="badge">● OPEN TO LEARNING & OPPORTUNITIES</div>
+            <p style="color:var(--cyan);margin-bottom:15px">XIN CHÀO, MÌNH LÀ</p>
+
+            <h1>Hoàng Anh <span class="gradient">Dũng.</span></h1>
+
+            <h2>Sinh viên <span class="gradient" id="typing">Kỹ thuật Máy tính</span></h2>
+
+            <p class="description">
+                Mình là sinh viên Kỹ thuật Máy tính tại Đại học Đông Á,
+                yêu thích lập trình, hệ thống nhúng, IoT và DevOps.
+                Mình mong muốn biến ý tưởng thành các sản phẩm công nghệ thực tế.
             </p>
 
-            <div class="project-tags">
-              <span>Arduino</span>
-              <span>ESP</span>
-              <span>MQTT</span>
-              <span>IoT</span>
+            <div class="buttons">
+                <a class="btn btn-primary" href="#projects">Xem dự án ↗</a>
+                <a class="btn btn-outline" href="#contact">Liên hệ với mình</a>
             </div>
 
-          </div>
-
-        </article>
-
-
-        <article class="project-card reveal">
-
-          <div class="project-image traffic">
-
-            <div class="traffic-light">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="stats">
+                <div><strong>04+</strong><span>Dự án học tập</span></div>
+                <div><strong>04+</strong><span>Lĩnh vực kỹ thuật</span></div>
+                <div><strong>∞</strong><span>Tinh thần học hỏi</span></div>
             </div>
-
-            <div class="road">
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-
-          </div>
-
-          <div class="project-content">
-
-            <div class="project-meta">
-              <span>02</span>
-              <span>SMART CITY</span>
-            </div>
-
-            <h3>Smart Traffic</h3>
-
-            <p>
-              Mô hình hệ thống giao thông thông minh
-              nhằm tối ưu hóa việc điều khiển giao thông.
-            </p>
-
-            <div class="project-tags">
-              <span>Embedded</span>
-              <span>Sensor</span>
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <article class="project-card reveal">
-
-          <div class="project-image robot">
-
-            <div class="robot-body">
-              <div class="robot-eye"></div>
-              <div class="robot-eye"></div>
-            </div>
-
-            <div class="line-path"></div>
-
-          </div>
-
-          <div class="project-content">
-
-            <div class="project-meta">
-              <span>03</span>
-              <span>ROBOTICS</span>
-            </div>
-
-            <h3>Line Following Robot</h3>
-
-            <p>
-              Robot dò line sử dụng Arduino và cảm biến
-              để xác định và bám theo đường đi.
-            </p>
-
-            <div class="project-tags">
-              <span>Arduino</span>
-              <span>Sensor</span>
-              <span>C/C++</span>
-            </div>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="section contact-section">
-
-      <div class="contact-container">
-
-        <div class="contact-heading reveal">
-
-          <p class="eyebrow">04 — CONTACT</p>
-
-          <h2>
-            Hãy cùng tạo ra
-            <span>điều gì đó.</span>
-          </h2>
-
-          <p>
-            Nếu bạn muốn trao đổi về một dự án, cơ hội thực tập
-            hoặc đơn giản là muốn kết nối, hãy gửi tin nhắn cho mình.
-          </p>
-
-          <div class="contact-links">
-
-            <a href="#contact">
-              <span>✉</span>
-              <div>
-                <small>Email</small>
-                <strong>Let's connect</strong>
-              </div>
-            </a>
-
-            <a href="#projects">
-              <span>⌘</span>
-              <div>
-                <small>Portfolio</small>
-                <strong>View my projects</strong>
-              </div>
-            </a>
-
-          </div>
-
         </div>
 
-
-        <div class="contact-form-wrapper reveal">
-
-          <form id="contactForm">
-
-            <div class="form-row">
-
-              <div class="input-group">
-                <label>HỌ VÀ TÊN</label>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="Nguyễn Văn A"
-                  required
-                >
-              </div>
-
-              <div class="input-group">
-                <label>EMAIL</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="email@example.com"
-                  required
-                >
-              </div>
-
+        <div class="profile reveal">
+            <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:12px">
+                <span>PERSONAL PORTFOLIO</span><span>2026</span>
             </div>
-
-            <div class="input-group">
-
-              <label>NỘI DUNG</label>
-
-              <textarea
-                id="message"
-                rows="6"
-                placeholder="Hãy viết điều bạn muốn trao đổi..."
-                required
-              ></textarea>
-
-            </div>
-
-            <button class="btn primary submit-btn" type="submit">
-
-              <span>Gửi tin nhắn</span>
-
-              <span class="arrow">
-                →
-              </span>
-
-            </button>
-
-            <p id="formStatus"></p>
-
-          </form>
-
+            <div class="avatar">HAD</div>
+            <h2>Hoàng Anh Dũng</h2>
+            <p>Computer Engineering Student</p>
+            <hr style="border:0;border-top:1px solid #ffffff18;margin:25px 0">
+            <p style="color:var(--cyan)">BUILD · LEARN · REPEAT</p>
         </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-content">
-
-      <div class="footer-logo">
-        HAD<span>.</span>
-      </div>
-
-      <p>
-        Designing ideas. Building technology.
-      </p>
-
-      <span>
-        © 2026 Hoàng Anh Dũng
-      </span>
-
     </div>
+</section>
 
-  </footer>
+<section class="section" id="about">
+    <div class="container">
+        <div class="section-title reveal">
+            <small>01 — ABOUT ME</small>
+            <h2>Một chút về <span class="gradient">mình.</span></h2>
+            <p>Học hỏi mỗi ngày, xây dựng giải pháp có ích từ công nghệ.</p>
+        </div>
 
+        <div class="about-grid">
+            <div class="card reveal">
+                <h3>Xin chào, mình là Dũng!</h3>
+                <p>
+                    Mình đang theo học ngành Kỹ thuật Máy tính tại Đại học Đông Á.
+                    Mình quan tâm đến sự kết hợp giữa phần cứng, phần mềm và các hệ thống thông minh.
+                </p>
+                <p>
+                    Mục tiêu của mình là phát triển kỹ năng lập trình, thiết kế hệ thống nhúng,
+                    xây dựng ứng dụng IoT và tìm hiểu quy trình tự động hóa phần mềm.
+                </p>
+                <div class="tags">
+                    <span class="tag">Embedded</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">DevOps</span>
+                    <span class="tag">Problem Solving</span>
+                </div>
+            </div>
 
-  <!-- BACK TO TOP -->
+            <div class="card reveal">
+                <h3 style="margin-bottom:10px">Thông tin cá nhân</h3>
+                <div class="info-row"><span>Trường</span><strong>Đại học Đông Á</strong></div>
+                <div class="info-row"><span>Chuyên ngành</span><strong>Kỹ thuật Máy tính</strong></div>
+                <div class="info-row"><span>Định hướng</span><strong>Embedded / IoT</strong></div>
+                <div class="info-row"><span>Lập trình</span><strong>C/C++ · Python</strong></div>
+                <div class="info-row"><span>Sở thích</span><strong>Bóng đá · Du lịch</strong></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  <button id="backTop" class="back-top">
-    ↑
-  </button>
+<section class="section" id="skills">
+    <div class="container">
+        <div class="section-title reveal">
+            <small>02 — MY SKILLS</small>
+            <h2>Kỹ năng <span class="gradient">công nghệ.</span></h2>
+            <p>Những lĩnh vực mình đang thực hành và phát triển.</p>
+        </div>
 
+        <div class="skills-grid">
+            <div class="card skill-card reveal">
+                <div class="skill-icon">C++</div>
+                <h3>C / C++</h3>
+                <p>Lập trình cơ bản, thuật toán và chương trình cho hệ thống nhúng.</p>
+                <div class="bar"><span style="width:75%"></span></div>
+            </div>
 
-  <script type="module" src="/src/main.js"></script>
+            <div class="card skill-card reveal">
+                <div class="skill-icon">Py</div>
+                <h3>Python</h3>
+                <p>Thuật toán, xử lý dữ liệu và xây dựng các ứng dụng cơ bản.</p>
+                <div class="bar"><span style="width:70%"></span></div>
+            </div>
+
+            <div class="card skill-card reveal">
+                <div class="skill-icon">IoT</div>
+                <h3>Embedded & IoT</h3>
+                <p>Arduino, ESP32, cảm biến và mô hình giám sát thiết bị.</p>
+                <div class="bar"><span style="width:80%"></span></div>
+            </div>
+
+            <div class="card skill-card reveal">
+                <div class="skill-icon">⚙</div>
+                <h3>DevOps</h3>
+                <p>Git, GitHub, Docker, Jenkins và quy trình CI/CD.</p>
+                <div class="bar"><span style="width:65%"></span></div>
+            </div>
+        </div>
+
+        <div class="card reveal" style="margin-top:22px">
+            <h3>Công cụ thường sử dụng</h3>
+            <div class="tags">
+                <span class="tag">C</span><span class="tag">C++</span>
+                <span class="tag">Python</span><span class="tag">Arduino</span>
+                <span class="tag">ESP32</span><span class="tag">MQTT</span>
+                <span class="tag">Git</span><span class="tag">GitHub</span>
+                <span class="tag">Docker</span><span class="tag">Jenkins</span>
+                <span class="tag">HTML</span><span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="projects">
+    <div class="container">
+        <div class="section-title reveal">
+            <small>03 — MY PROJECTS</small>
+            <h2>Dự án <span class="gradient">nổi bật.</span></h2>
+            <p>Các mô hình học tập và thực hành kỹ thuật.</p>
+        </div>
+
+        <div class="projects-grid">
+            <article class="card project-card reveal">
+                <div class="project-visual">🏠</div>
+                <h3>Smart Home System</h3>
+                <p>Hệ thống nhà thông minh sử dụng vi điều khiển và cảm biến để giám sát môi trường, hỗ trợ điều khiển thiết bị.</p>
+                <div class="tags"><span class="tag">Arduino</span><span class="tag">ESP32</span><span class="tag">IoT</span></div>
+            </article>
+
+            <article class="card project-card reveal">
+                <div class="project-visual">🚦</div>
+                <h3>Smart Traffic Light</h3>
+                <p>Mô hình đèn giao thông ứng dụng logic điều khiển để mô phỏng chu trình tín hiệu giao thông.</p>
+                <div class="tags"><span class="tag">Embedded</span><span class="tag">Digital Logic</span></div>
+            </article>
+
+            <article class="card project-card reveal">
+                <div class="project-visual">🤖</div>
+                <h3>Line Following Robot</h3>
+                <p>Robot dò line sử dụng cảm biến để xác định đường đi và điều khiển động cơ bám theo vạch.</p>
+                <div class="tags"><span class="tag">Arduino</span><span class="tag">C/C++</span></div>
+            </article>
+
+            <article class="card project-card reveal">
+                <div class="project-visual">🔥</div>
+                <h3>Smart Fire Alarm</h3>
+                <p>Mô hình cảnh báo cháy dùng cảm biến phát hiện dấu hiệu bất thường và kích hoạt cảnh báo.</p>
+                <div class="tags"><span class="tag">ESP32</span><span class="tag">Sensor</span><span class="tag">IoT</span></div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="reveal">
+                <div class="section-title">
+                    <small>04 — CONTACT</small>
+                    <h2>Kết nối với <span class="gradient">mình.</span></h2>
+                </div>
+                <p style="color:var(--muted)">
+                    Bạn muốn trao đổi về dự án công nghệ, cơ hội thực tập
+                    hoặc một ý tưởng mới? Hãy chuẩn bị tin nhắn tại đây.
+                </p>
+                <p style="color:var(--cyan);margin-top:20px">Let's build something useful.</p>
+            </div>
+
+            <form id="contactForm" class="reveal">
+                <label for="name">HỌ VÀ TÊN</label>
+                <input id="name" name="name" type="text" placeholder="Nguyễn Văn A" required>
+
+                <label for="email">EMAIL CỦA BẠN</label>
+                <input id="email" name="email" type="email" placeholder="email@example.com" required>
+
+                <label for="message">NỘI DUNG</label>
+                <textarea id="message" name="message" placeholder="Nội dung bạn muốn trao đổi..." required></textarea>
+
+                <button type="submit" class="btn btn-primary" style="border:0;cursor:pointer">Chuẩn bị email ↗</button>
+                <p id="formStatus" style="margin-top:12px;color:var(--cyan);font-size:13px"></p>
+            </form>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© <span id="year"></span> Hoàng Anh Dũng · Designing ideas. Building technology.</p>
+    </div>
+</footer>
+
+<button id="backTop" aria-label="Lên đầu trang">↑</button>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '☰';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+const phrases = [
+    'Kỹ thuật Máy tính',
+    'Embedded Systems',
+    'Internet of Things',
+    'DevOps & CI/CD'
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+const typing = document.getElementById('typing');
+
+function typeEffect() {
+    const phrase = phrases[phraseIndex];
+
+    if (!deleting) {
+        charIndex++;
+        typing.textContent = phrase.substring(0, charIndex);
+
+        if (charIndex === phrase.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1200);
+            return;
+        }
+    } else {
+        charIndex--;
+        typing.textContent = phrase.substring(0, charIndex);
+
+        if (charIndex === 0) {
+            deleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 45 : 85);
+}
+
+typeEffect();
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+});
+
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+    backTop.style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('contactForm').addEventListener('submit', event => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const subject = encodeURIComponent('Liên hệ từ Portfolio của Hoàng Anh Dũng');
+    const body = encodeURIComponent(
+        'Xin chào Hoàng Anh Dũng,\n\n' +
+        message + '\n\n' +
+        'Người gửi: ' + name + '\n' +
+        'Email phản hồi: ' + email
+    );
+
+    document.getElementById('formStatus').textContent =
+        'Đang mở ứng dụng email. Bạn cần có ứng dụng email được cấu hình sẵn.';
+
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+});
+</script>
 
 </body>
 </html>
+```
